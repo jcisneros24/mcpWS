@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration status="info" packages="com.hiveit.acpservice">
+    <appenders>
+        <File name="APPENDER_FILE" fileName="/folder/log/mcpws.log" append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p [%C:%L] - %m%n"/>
+        </File>
+        <Console name="APPENDER_OUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p [%C:%L] - %m%n"/>
+        </Console>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <appender-ref ref="APPENDER_OUT"/>
+            <appender-ref ref="APPENDER_FILE"/>
+        </root>
+    </loggers>
+</configuration>
