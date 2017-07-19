@@ -20,7 +20,30 @@ public class MCPService {
 	final static Logger logger = LoggerFactory.getLogger(MCPService.class);
 
 	XrootDAOImpl xrootDAOImpl = new XrootDAOImpl();
+	
+	@POST
+	@Path("printUser/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public RespuestaBean printUser(String name){
+		RespuestaBean response = new RespuestaBean();
+		
+		if(name != null && !name.isEmpty()){
+			
+			response.setCode(Constante.PARAMETRO.COD_RESPUESTA_EXITO);
+			response.setMessage(Constante.MENSAJE.MSJ_RESPUESTA_EXITO);
+			response.setValue("Welcome: "+name);
+			return response;
+			
+		} else{
+			response.setCode(Constante.PARAMETRO.COD_RESPUESTA_NO_EXITO);
+			response.setMessage(Constante.MENSAJE.MSJ_RESPUESTA_NO_EXITO);
+		}
+		
+		return response;
 
+	}
+	
 	@POST
 	@Path("updateCode/")
 	@Consumes(MediaType.APPLICATION_JSON)

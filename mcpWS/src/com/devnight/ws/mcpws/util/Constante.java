@@ -9,5 +9,12 @@ public abstract class Constante {
 		public static final String COD_RESPUESTA_NO_EXITO = "0";
 
 	}
+	
+	public abstract class MENSAJE {
+
+		public static final String MSJ_RESPUESTA_EXITO = "El servicio se ejecuto con exito";
+		public static final String MSJ_RESPUESTA_NO_EXITO = "El servicio no se ejecuto con exito.";
+
+	}
 
 }
